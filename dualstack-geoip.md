@@ -2,11 +2,11 @@
 
 ## Abstract
 
-During the IPv6 adoption, IPv6 GeoIP is identified as a challenge and speed bump for Content and application operator. Some studies and operational experiences show that state-of-art the accuracy of IPv6 GeoIP is far less reliable than IPv4 GeoIP for operational use. This memo proposes an approach and use cases to provide better IPv6 GeoIP based on an intuitive idea: if IPv6 GeoIP is not as good as IPv4 GeoIP, why not use dual-stack host's IPv4 GeoIP for IPv6 GeoIP purpose? 
+During IPv6 adoption, IPv6 GeoIP is identified as a challenge and speed bump for content and application operator. Some studies and operational experiences show that the accuracy of IPv6 GeoIP is relatively poor in comparison to their IPv4 counterparts. This memo introduces use cases and approaches to provide better IPv6 GeoIP based on an intuitive idea: if IPv6 GeoIP is not as good as IPv4 GeoIP, why not use dual-stack host's IPv4 GeoIP for IPv6 GeoIP purpose? 
 
 ## Introduction
 
-GeoIP (IP-based Geolocation) is nowadays widely used in Geolocation-based applications, Content distribution and traffic scheduling, and Geolocation-based security policy. The key issue on GeoIP is the accuracy which vary between IPv4 and IPv6. Since IPv4 has been used for many years, IPv4 GeoIP is accurate enough for Geolocation-based application. In contrast IPv6 is newly deployed and new IPv6 address blocks are being assigned from RIRs to ISPs and organizations. IPv6 location information may not be well documented. So IPv6 GeoIP is identified as a notable challenge and speed bump for Content and application operator. Some studies and operational experiences [1,2] show that state-of-art the accuracy of IPv6 GeoIP is relatively poor in comparison to their IPv4 counterparts.
+GeoIP (IP-based Geolocation) is nowadays widely used in Geolocation-based applications, Content distribution and traffic scheduling, and Geolocation-based security policy. The key issue on GeoIP is the accuracy which vary between IPv4 and IPv6. Since IPv4 has been used for many years, IPv4 GeoIP is accurate enough for Geolocation-based application. In contrast IPv6 is newly deployed and new IPv6 address blocks are being assigned from RIRs to ISPs and organizations. IPv6 location information may not be well documented. So IPv6 GeoIP is identified as a notable challenge and speed bump for Content and application operator. Some studies and operational experiences [1,2] show that the accuracy of IPv6 GeoIP is relatively poor in comparison to their IPv4 counterparts.
 
 One typical example of GeoIP application in DNS field is that many authoritative nameservers today return different and tailored responses based on the perceived topological location of the user. If IPv6 GeoIP is not precise enough, the performance of topology-sensitive authoritative nameserver will be poorer in IPv6 than IPv4. Users' experience will be impacted , and it may end up with hesitation or hopelessness for the authoritative DNS operator to update its DNS to Dual Stack. It is a problem.
 
@@ -50,7 +50,9 @@ Multihoming is a issue for this practice, because IPv4 and IPv6 address of a sit
 
 TBD
 
-## Appendix A IPv6 GeoIP and DNS over HTTP practice in Tencent
+## Appendix A. IPv6 GeoIP and DNS over HTTP practice in Tencent
+
+TBD
 
 
 
