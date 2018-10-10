@@ -10,7 +10,7 @@ GeoIP (IP-based Geolocation) is nowadays widely used in Geolocation-based applic
 
 One typical example of GeoIP application in DNS field is that many authoritative nameservers today return different and tailored responses based on the perceived topological location of the user. If IPv6 GeoIP is not precise enough, the performance of topology-sensitive authoritative nameserver will be poorer in IPv6 than IPv4. Users' experience will be impacted , and it may end up with hesitation or hopelessness for the authoritative DNS operator to update its DNS to Dual Stack. It is a problem.
 
-It is a intuition that if IPv6 GeoIP is not as good as IPv4 GeoIP, why not use dual-stack host's IPv4 GeoIP for IPv6 GeoIP purpose? The rationale is simple that given dual-stack is widely adopted as a main transition strategy, the typical case is one network interface of a host is assigned with both IPv6 and IPv4 addresses. The client's IP subnet and Geolocaiton information has inherent one-to-one mapping between IPv6 and IPv4. Since IPv4 GeoIP database is relatively stable and more accurate for the time being, it is wise to map IPv6 prefix and IPv4 subnet, and take IPv6 prefix as a certain key to search the IPv4 GeoIP database to deliver a better GeoIP result.
+It is a intuition that if IPv6 GeoIP is not as good as IPv4 GeoIP, why not use dual-stack host's IPv4 GeoIP for IPv6 GeoIP purpose? The rationale is simple that given dual-stack is widely adopted as a main transition strategy, the typical case is one network interface of a host is assigned with both IPv6 and IPv4 addresses. The client's IP subnet and Geolocation information has inherent one-to-one mapping between IPv6 and IPv4. Since IPv4 GeoIP database is relatively stable and more accurate for the time being, it is wise to map IPv6 prefix and IPv4 subnet, and take IPv6 prefix as a certain key to search the IPv4 GeoIP database to deliver a better GeoIP result.
 
 However, to the best knowledge of the authors, no evidence shows the available open GeoIP systems take advantage of IPv6/IPv4 GeoIP mapping and try something like translating IPv6 geolocation lookup to IPv4. (Maxmind only do this with IPv6 addresses that contain an embedded IPv4 address.) The Regional Whois registry, online lookup services(IP2Location.com) and offline database (MaxMind GeoIP2) most probably build separate systems between IPv4 and IPv6 without any reference or mapping. 
 
@@ -44,7 +44,7 @@ Note that this use case is also a real one which is under development and test. 
 
 ## limits consideration
 
-Multihoming is a issue for this practice, because IPv4 and IPv6 address of a site may be assigned by different upstream ISP. Although the physical location of a client are the same but the locations of network topology are different which real matters for many Geolocation-based application.
+Multihoming is a issue for this practice, because IPv4 and IPv6 address of a site may be assigned by different upstream ISP. Although the physical location of a client are the same but the locations of network topology are different which really matters for many Geolocation-based application.
 
 ## Security Considerations
 
