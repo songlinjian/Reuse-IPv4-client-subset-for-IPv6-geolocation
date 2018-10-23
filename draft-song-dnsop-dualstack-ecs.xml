@@ -43,7 +43,7 @@
 
   <front>
 
-    <title>Dual-stack ECS: both IPv6 and IPv4 Client Subnets in DNS Queries</title>
+    <title>Client Dualstack Subnets in DNS Queries</title>
 
     <author fullname="Linjian Song" initials="L." surname="Song">
       <organization>Beijing Internet Institute</organization>
@@ -83,7 +83,13 @@
 
     <abstract>
       <t>
-        During the period of IPv6 transition, IP-based Geolocation (GeoIP) applications are identified as a challenge and speed bump for ICPs (Internet Content Providers) to migrating their service to IPv6. Some studies and operational experiences show that the accuracy of IPv6 GeoIP is relatively poor in comparison to their IPv4 counterparts. This memo proposed to include both available client's IPv4 and IPv6  subnets into DNS queries to provide better IPv6 GeoIP.  
+        During the period of IPv6 transition, IP-based Geolocation (GeoIP) applications are identified as a challenge and speed bump for ICPs (Internet Content Providers) to migrating their service to IPv6. Some studies and operational experiences show that the accuracy of IPv6 GeoIP is relatively poor in comparison to their IPv4 counterparts. This memo proposed to include client's dualstack subnets into DNS queries to provide better IPv6 GeoIP.  
+      </t>
+
+      <t>
+       REMOVE BEFORE PUBLICATION: The source of the document with test 
+       script is currently placed at GitHub <xref target="Dualstack-ECS-GitHub" />. 
+       Comments and pull request are welcome.
       </t>
 
     </abstract>
@@ -103,7 +109,7 @@
       <t>EDNS Client Subnet [RFC7871] is a useful tool making client subnet visible to authoritative nameserver or load balancer. However, it is not clear if a client ask AAAA record via IPv4 transport protocol (QTYPE=AAAA and ECS FAMILY=1), how the authoritative make use of the IPv4 subnet of the dual-stack client's for a tailored AAAA response. It is a missing part of RFC7871 but a start for an potential approach discussed in this memo.
       </t>
 -->
-      <t>To provide a better IPv6 tailored DNS response in dual-stack environment, this memo proposes to enable recursive server and Client to include their available IPv4 and IPv6 subnets into ECS Option <xref target="RFC7871" /> in DNS queries. Authoritative nameservers can make a better use of this dual-stack subnet information for a tailored response. 
+      <t>To provide a better IPv6 tailored DNS response in dual-stack environment, this memo proposes to enable recursive server and Client to include their IPv4 and IPv6 subnets into ECS Option <xref target="RFC7871" /> in DNS queries. Authoritative nameservers can make a better use of this dual-stack subnet information for a tailored response. 
       </t>
 
     </section>
@@ -174,7 +180,16 @@
 
     <references title="References">
       &RFC7871;
-
+      <reference anchor="Dualstack-ECS-GitHub" target="https://github.com/songlinjian/dualstack-ECS">
+       <front>
+        <title>GitHub Repository of Dual-stack ECS</title>
+       <author fullname= "Linjian Song">
+       <organization>BII</organization>
+        <address></address>
+        </author>
+        <date></date>
+      </front>
+    </reference>
      <reference anchor="ipv6geo" target= "https://pdfs.semanticscholar.org/0705/1014673302f97a762e74b795b70efdd74a1c.pdf">
             <front>
                 <title>Comparing the Accuracy of IPv4 and IPv6 Geolocation Databases</title>
